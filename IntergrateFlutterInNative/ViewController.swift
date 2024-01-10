@@ -15,13 +15,13 @@ class ViewController: UIViewController {
     private var methodChannel: FlutterMethodChannel?
     private var flutterViewController: FlutterViewController?
     
-    private let methodChannelName = "IntegrateFlutterInNative"
+    private let methodChannelName = "com.integrateFlutterInNative.channel"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Start flutter engine and method channel
-        setUpFlutterengine()
+        setUpFlutterEngine()
         
         // Do any additional setup after loading the view.
         let goToFlutterAction =  UIAction(title: "Go To Flutter", handler: {[weak self] _ in
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
     }
     
     //MARK: - Flutter
-    private func setUpFlutterengine() {
+    private func setUpFlutterEngine() {
         let localFlutterEngine = FlutterEngine()
         localFlutterEngine.run()
         GeneratedPluginRegistrant.register(with: localFlutterEngine)
